@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Failed</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes drawCross1 {
+      0% { stroke-dashoffset: 120; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes drawCross2 {
+      0% { stroke-dashoffset: 120; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.85); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .animate-pop {
+      animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .cross-1 {
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: drawCross1 0.35s ease-out 0.15s forwards;
+    }
+    .cross-2 {
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: drawCross2 0.35s ease-out 0.3s forwards;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col items-center justify-center p-6 antialiased select-none">
+
+  <main class="flex flex-col items-center text-center animate-pop">
+    
+    <!-- Big Red X Icon -->
+    <div class="mb-6 sm:mb-8 flex items-center justify-center">
+      <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-red-50 flex items-center justify-center shadow-inner">
+        <svg 
+          class="w-20 h-20 sm:w-24 sm:h-24 text-red-600" 
+          viewBox="0 0 64 64" 
+          fill="none" 
+          stroke="currentColor" 
+          stroke-width="7" 
+          stroke-linecap="round"
+        >
+          <line x1="18" y1="18" x2="46" y2="46" class="cross-1" />
+          <line x1="46" y1="18" x2="18" y2="46" class="cross-2" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Large Amount Display -->
+    <div class="text-5xl sm:text-7xl font-extrabold tracking-tight text-slate-900 mb-3 sm:mb-4">
+      ₹1
+    </div>
+
+    <!-- Big Payment Failed Text -->
+    <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-red-600">
+      Payment Failed
+    </h1>
+
+  </main>
+
+</body>
+</html>
